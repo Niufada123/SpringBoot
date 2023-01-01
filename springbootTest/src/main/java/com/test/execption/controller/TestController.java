@@ -70,7 +70,13 @@ public class TestController {
         String token1 = JwtUtil.createToken(token);
         return Result.getSuccess().data(token1).build();
     }
-    @TokenCheck
+
+    /**
+     * 使用自定义注解和自定义异常
+     * @param token
+     * @return
+     */
+    @TokenCheck //自定义注解
     @GetMapping("/parse")
     public Result parsetoken( @RequestParam(value = "token") String token){
         return Result.getSuccess().build();

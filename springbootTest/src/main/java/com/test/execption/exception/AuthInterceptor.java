@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 
 /**
  * 类描述：TODO
- *
+ *  针对自定义注解的拦截器
  * @author admin
  * @date 2023-01-01 17:07
  **/
