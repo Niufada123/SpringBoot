@@ -1,0 +1,19 @@
+
+kaptcha:
+  height: 50
+  width: 200
+  content:
+    length: 5
+    source: abc12345678woshizhongguoren
+    space: 1
+  font:
+    color: black
+    name: Arial
+    size: 40
+  background-color:
+    from: red
+    to: white
+  border:
+    enabled: true
+    color: black
+    thickness: 1

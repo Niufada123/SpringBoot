@@ -1,5 +1,9 @@
 package com.test.execption.exception;
 
+import com.baomidou.kaptcha.exception.KaptchaException;
+import com.baomidou.kaptcha.exception.KaptchaIncorrectException;
+import com.baomidou.kaptcha.exception.KaptchaNotFoundException;
+import com.baomidou.kaptcha.exception.KaptchaTimeoutException;
 import com.test.execption.entity.Result;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -35,5 +39,19 @@ public class CheckHandler {
         return Result.getSuccess().code("301").msg("token").build();
     }
 
+
+
+    @ExceptionHandler(KaptchaException.class)
+    public String kcaptchaException(KaptchaException e){
+        if (e instanceof KaptchaTimeoutException){
+            return "超时";
+        }else if (e instanceof KaptchaIncorrectException){
+            return "不正确";
+        }else if (e instanceof KaptchaNotFoundException){
+            return "没找到";
+        }else {
+            return "反正错了";
+        }
+    }
 
 }
