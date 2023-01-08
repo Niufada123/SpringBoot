@@ -1,2 +1,13 @@
+
+# http??
+http-port: 8082
+# https??
 server:
   port: 8081
+
+  ssl:
+    key-store: classpath:fd-alias.keystore
+    key-store-type: JKS
+    key-alias: fd-alias
+    key-store-password: 123456
+    key-password: 123456
